@@ -1,7 +1,50 @@
 import wollok.game.*
+import rodado.*
+import colores.*
+import pared.*
 
 program corsasEnElGame {
-	// hacer las inicializaciones necesarias 
 	
+	game.title("corsa Game")
+	
+	game.height(10)
+	game.width(10)
+	
+
+	const auto1 = new ChevroletCorsa()
+	auto1.color(rojo)
+	const auto2 = new ChevroletCorsa()
+	auto2.color(azul)
+	const auto3 = new ChevroletCorsa()
+	auto3.color(verde)
+	var auto = 
+	
+	
+	game.addVisual(auto1)
+	game.addVisual(auto2)
+	game.addVisual(auto3)
+	
+	keyboard.num1().onPressDo({auto =  auto1})
+	keyboard.num2().onPressDo({auto =  auto2})
+	keyboard.num3().onPressDo({auto =  auto3})
+	
+	
+	
+	keyboard.up().onPressDo({auto.moveUp()})
+	keyboard.right().onPressDo({auto.moveRight()})
+	keyboard.down().onPressDo({auto.moveDown()})
+	keyboard.left().onPressDo({auto.moveLeft()})
+	
+	
+	keyboard.a().onPressDo({auto.color(azul)})
+	keyboard.r().onPressDo({auto.color(rojo)})
+	keyboard.v().onPressDo({auto.color(verde)})
+	
+	
+	/*op2 */
+	/*keyboard.a().onPressDo({cachito.cambiarAAzul()})
+	keyboard.r().onPressDo({cachito.cambiarARojo()})
+	keyboard.v().onPressDo({cachito.cambiarAVerde()})*/
+		
 	game.start()
 }
